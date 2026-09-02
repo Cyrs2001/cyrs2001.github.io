@@ -1,149 +1,199 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Portfolio en maintenance</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, sans-serif;
-        }
-
-        body {
-            height: 100vh;
-            background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #00c6ff);
-            background-size: 400% 400%;
-            animation: gradientBG 10s ease infinite;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-        }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .container {
-            background: rgba(0, 0, 0, 0.45);
-            padding: 40px;
-            border-radius: 16px;
-            text-align: center;
-            width: 90%;
-            max-width: 500px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-        }
-
-        h1 {
-            font-size: 2.4rem;
-            margin-bottom: 15px;
-        }
-
-        p {
-            font-size: 1.1rem;
-            color: #e0e0e0;
-            margin-bottom: 30px;
-        }
-
-        .countdown {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 30px;
-        }
-
-        .time {
-            flex: 1;
-        }
-
-        .number {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #00e5ff;
-        }
-
-        .label {
-            font-size: 0.8rem;
-            color: #bbbbbb;
-        }
-
-        .name {
-            font-size: 1.2rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-            margin-top: 10px;
-            color: #00e5ff;
-        }
-
-        .icon {
-            font-size: 3rem;
-            margin-bottom: 15px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carlos Sewa · Dossier professionnel</title>
+  <meta name="description" content="Consultant en Systèmes de Gestion et Développeur Full-Stack. Je conçois des plateformes utilisées en production : livraison, point de vente, éducation.">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-    <div class="container">
-        <div class="icon">🚀</div>
-        <h1>Portfolio en maintenance</h1>
-        <p>
-            Je travaille actuellement sur mon portfolio.<br>
-            Lancement prévu dans :
-        </p>
-
-        <div class="countdown">
-            <div class="time">
-                <div class="number" id="days">00</div>
-                <div class="label">Jours</div>
-            </div>
-            <div class="time">
-                <div class="number" id="hours">00</div>
-                <div class="label">Heures</div>
-            </div>
-            <div class="time">
-                <div class="number" id="minutes">00</div>
-                <div class="label">Minutes</div>
-            </div>
-            <div class="time">
-                <div class="number" id="seconds">00</div>
-                <div class="label">Secondes</div>
-            </div>
-        </div>
-
-        <div class="name">Carlos Sewa</div>
+  <div class="sheet">
+    <div class="topbar">
+      <span class="topbar__id mono">DOSSIER N&deg; CS&#8209;2026</span>
+      <nav class="topbar__nav">
+        <a href="#apropos">Profil</a>
+        <a href="#projets">Réalisations</a>
+        <a href="#competences">Compétences</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
 
-    <script>
-        // 🔴 MODIFIE LA DATE DE LANCEMENT ICI
-        const launchDate = new Date("2026-03-01T00:00:00").getTime();
+    <header class="cover">
+      <div class="stamp-badge" aria-hidden="true"><span class="stamp-badge__text">CS</span></div>
+      <div>
+        <h1>Carlos Sewa</h1>
+        <p class="cover__role">Consultant en Systèmes de Gestion &amp; Développeur Full&#8209;Stack</p>
+        <p class="cover__tagline">Je conçois des plateformes utilisées en production : livraison, point de vente, éducation. Trois secteurs, un même métier&nbsp;: faire tenir des systèmes qui doivent tourner tous les jours.</p>
 
-        const countdown = setInterval(() => {
-            const now = new Date().getTime();
-            const distance = launchDate - now;
+        <div class="statusline">
+          <span><span class="dot"></span><strong>Statut</strong> : ouvert à discussion</span>
+          <span class="mono"><strong>Basé à</strong> Abomey&#8209;Calavi, Bénin</span>
+          <span class="mono"><strong>En poste depuis</strong> 2022 &middot; TicsMaster</span>
+        </div>
 
-            if (distance < 0) {
-                clearInterval(countdown);
-                document.querySelector(".countdown").innerHTML = "🚀 Le site est en ligne !";
-                return;
-            }
+        <div class="cta-row">
+          <a href="#projets" class="btn btn--solid">Voir les réalisations</a>
+          <a href="#contact" class="btn btn--outline">Écrire à Carlos</a>
+        </div>
+      </div>
+    </header>
 
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    <section id="apropos" class="section">
+      <div class="section__head">
+        <h2 class="section__title">Profil</h2>
+        <span class="section__rule"></span>
+      </div>
+      <div class="about reveal">
+        <p>Développeur web full&#8209;stack basé à Abomey&#8209;Calavi, Bénin, spécialisé dans l'écosystème JavaScript (Vue, Nuxt, Node.js). J'interviens là où beaucoup de projets échouent&nbsp;: transformer une idée en une plateforme fonctionnelle, utilisée en production et capable d'évoluer.</p>
+        <p>Depuis juillet 2022, je conçois et maintiens une solution éducative nationale chez <strong>TicsMaster</strong>. En parallèle, je cofonde et développe mes propres produits&nbsp;: <strong>Cyclodis</strong>, une plateforme de livraison déjà utilisée par des milliers de clients, et <strong>CaisseExpert</strong>, un SaaS de gestion de point de vente actuellement en phase de lancement.</p>
+        <p>Formation&nbsp;: Licence en Mathématiques et Informatique Appliquée, Université d'Abomey&#8209;Calavi (2018&#8209;2022).</p>
+      </div>
+    </section>
 
-            document.getElementById("days").textContent = days;
-            document.getElementById("hours").textContent = hours;
-            document.getElementById("minutes").textContent = minutes;
-            document.getElementById("seconds").textContent = seconds;
-        }, 1000);
-    </script>
+    <section id="projets" class="section">
+      <div class="section__head">
+        <h2 class="section__title">Réalisations</h2>
+        <span class="section__rule"></span>
+      </div>
 
+      <div class="entry reveal">
+        <div class="entry__head">
+          <span class="entry__ref mono">RÉF. CYC&#8209;2024</span>
+          <span class="entry__status entry__status--active">Actif</span>
+        </div>
+        <div class="entry__title-row">
+          <h3>Cyclodis</h3>
+          <span class="entry__role">Cofondateur &amp; chef de projet technique</span>
+        </div>
+        <p>Plateforme de livraison de produits du quotidien au Bénin. Conception de l'architecture technique et développement intégral, aujourd'hui utilisée en conditions réelles pour la gestion de commandes et de livraisons.</p>
+        <div class="ledger-rows">
+          <div class="ledger-row">
+            <span class="ledger-row__label">Commandes traitées / mois (oct. 2025)</span>
+            <span class="ledger-row__leader"></span>
+            <span class="ledger-row__value">600+</span>
+          </div>
+          <div class="ledger-row">
+            <span class="ledger-row__label">Clients actifs</span>
+            <span class="ledger-row__leader"></span>
+            <span class="ledger-row__value">4 000+</span>
+          </div>
+        </div>
+        <p class="stack-line"><b>Stack</b> : Nuxt 4 · Nitro · Prisma · Capacitor · o2switch · Kkiapay</p>
+        <a href="https://cyclodis.com" target="_blank" rel="noopener" class="entry__link">→ cyclodis.com</a>
+      </div>
+
+      <div class="entry reveal">
+        <div class="entry__head">
+          <span class="entry__ref mono">RÉF. CXP&#8209;2026</span>
+          <span class="entry__status entry__status--soon">Lancement mi&#8209;février</span>
+        </div>
+        <div class="entry__title-row">
+          <h3>CaisseExpert</h3>
+          <span class="entry__role">Cofondateur &amp; développeur full&#8209;stack</span>
+        </div>
+        <p>SaaS de gestion de point de vente&nbsp;: stock, ventes, facturation, dettes clients. Pensé pour les réalités des commerces et PME béninoises. Cofondé avec Felix Gando.</p>
+        <p class="stack-line"><b>Stack</b> : Nuxt 4 (SSR) · Prisma · Dexie</p>
+      </div>
+
+      <div class="entry reveal">
+        <div class="entry__head">
+          <span class="entry__ref mono">RÉF. EDU&#8209;2022</span>
+          <span class="entry__status entry__status--institutional">Institutionnel</span>
+        </div>
+        <div class="entry__title-row">
+          <h3>TicsMaster · EducMaster</h3>
+          <span class="entry__role">Vice&#8209;chef de projet</span>
+        </div>
+        <p>Solution éducative nationale (EducMaster Primaire et Secondaire), commandée par l'État béninois. Utilisée dans tout le pays pour la gestion scolaire et l'organisation des examens officiels (CEP, BEPC).</p>
+      </div>
+    </section>
+
+    <section id="competences" class="section">
+      <div class="section__head">
+        <h2 class="section__title">Compétences</h2>
+        <span class="section__rule"></span>
+      </div>
+      <dl class="skills-table reveal">
+        <dt>Langages</dt>
+        <dd>JavaScript, TypeScript</dd>
+        <dt>Frontend</dt>
+        <dd>Vue 3, Nuxt 3/4, Pinia, Vuetify</dd>
+        <dt>Backend</dt>
+        <dd>Node.js, Nitro, Prisma</dd>
+        <dt>Données</dt>
+        <dd>MySQL, Dexie</dd>
+        <dt>Outils</dt>
+        <dd>Git, Capacitor</dd>
+      </dl>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="section__head">
+        <h2 class="section__title">Contact</h2>
+        <span class="section__rule"></span>
+      </div>
+      <div class="contact-block reveal">
+        <div>
+          <p>Une idée à concrétiser, une plateforme à faire évoluer&nbsp;? Je suis ouvert à en discuter.</p>
+          <div class="cta-row">
+            <a href="mailto:sewacarlos0@gmail.com" class="btn btn--solid">Écrire un email</a>
+            <a href="https://www.linkedin.com/in/carlos-yaovi-roland-sewa-042143227/" target="_blank" rel="noopener" class="btn btn--outline">Voir mon LinkedIn</a>
+          </div>
+        </div>
+        <div class="approved-stamp" aria-hidden="true">
+          <span>Ouvert&nbsp;à<br>collaboration</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="sheet">
+    <span>&copy; <span id="year">2026</span> Carlos Sewa</span>
+    <span>Abomey&#8209;Calavi, Bénin</span>
+  </footer>
+
+  <button class="theme-toggle" id="themeToggle" type="button">Mode sombre</button>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    var toggle = document.getElementById('themeToggle');
+    var root = document.documentElement;
+    var prefersDarkMQ = window.matchMedia('(prefers-color-scheme: dark)');
+
+    function isCurrentlyDark() {
+      var current = root.getAttribute('data-theme');
+      return current === 'dark' || (!current && prefersDarkMQ.matches);
+    }
+
+    function syncLabel() {
+      toggle.textContent = isCurrentlyDark() ? 'Mode clair' : 'Mode sombre';
+    }
+
+    toggle.addEventListener('click', function () {
+      root.setAttribute('data-theme', isCurrentlyDark() ? 'light' : 'dark');
+      syncLabel();
+    });
+
+    syncLabel();
+
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduceMotion && 'IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.reveal').forEach(function (el) { observer.observe(el); });
+    } else {
+      document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-visible'); });
+    }
+  </script>
 </body>
 </html>

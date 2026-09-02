@@ -1,16 +1,24 @@
-### Hi there 👋
+# cyrs2001.github.io
 
-<!--
-**Cyrs2001/cyrs2001** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Portfolio personnel de Carlos Sewa, Consultant en Systèmes de Gestion & Développeur Full-Stack.
 
-Here are some ideas to get you started:
+Site statique (HTML/CSS/JS pur, sans build), publié via GitHub Pages : https://cyrs2001.github.io/
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+Direction visuelle : un dossier/registre technique (papier de registre, tampon encreur, entrées façon manifeste), polices IBM Plex Mono et Source Serif 4 auto-hébergées.
+
+## Structure
+
+```
+index.html              # page unique à sections (Profil, Réalisations, Compétences, Contact)
+assets/
+  css/style.css          # styles + déclarations @font-face
+  fonts/                 # polices auto-hébergées (woff2)
+```
+
+## Développement local
+
+Servir le dossier avec n'importe quel serveur statique, par exemple :
+
+```bash
+npx serve .
+```
